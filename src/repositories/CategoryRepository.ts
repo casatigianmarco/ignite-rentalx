@@ -20,6 +20,14 @@ class CategoryRepository {
     });
     this.categories.push(category);
   }
+
+  findByName(name: string): Category {
+    return this.categories.find(category => category.name === name);
+  }
+
+  list(): Category[] {
+    return this.categories;
+  }
 }
 
 export { CategoryRepository };
