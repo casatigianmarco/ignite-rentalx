@@ -1,16 +1,13 @@
 import { Router } from 'express';
 
 import { CategoryOnMemoryRepository } from '../modules/cars/repositories/CategoryOnMemoryRepository';
-import { CreateCategoryService } from '../modules/cars/services/CreateCategoryService';
+import { createCategoryController } from '../modules/cars/useCases/createCategory';
 
 const categoryRoutes = Router();
 const categoryRepository = new CategoryOnMemoryRepository();
 
 categoryRoutes.post('/', (request, response) => {
-  const { name, description } = request.body;
-  const createCategoryService = new CreateCategoryService(categoryRepository);
-  createCategoryService.execute({ name, description });
-  return response.status(201).send();
+  createCategoryController.handle(request, response);
 });
 
 categoryRoutes.get('/', (request, response) => {

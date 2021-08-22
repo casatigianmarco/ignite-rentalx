@@ -1,11 +1,11 @@
-import { ICategoryRepository } from '../repositories/ICategoryRepository';
+import { ICategoryRepository } from '../../repositories/ICategoryRepository';
 
 interface IRequest {
   name: string;
   description: string;
 }
 
-class CreateCategoryService {
+class CreateCategoryUseCase {
   constructor(private categoryRepository: ICategoryRepository) {}
   execute({ name, description }: IRequest): void {
     const categoryExists = this.categoryRepository.findByName(name);
@@ -16,4 +16,4 @@ class CreateCategoryService {
   }
 }
 
-export { CreateCategoryService };
+export { CreateCategoryUseCase };
