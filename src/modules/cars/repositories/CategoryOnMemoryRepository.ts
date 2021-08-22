@@ -2,9 +2,17 @@ import { Category } from '../models/Category';
 import { ICategoryRepository, ICreateCategoryDTO } from './ICategoryRepository';
 
 class CategoryOnMemoryRepository implements ICategoryRepository {
+  private static INSTANCE: CategoryOnMemoryRepository;
   private categories: Category[];
-  constructor() {
+  private constructor() {
     this.categories = [];
+  }
+
+  public static getInstance(): CategoryOnMemoryRepository {
+    if (!CategoryOnMemoryRepository.INSTANCE) {
+      CategoryOnMemoryRepository.INSTANCE = new CategoryOnMemoryRepository();
+    }
+    return CategoryOnMemoryRepository.INSTANCE;
   }
 
   create({ name, description }: ICreateCategoryDTO): void {

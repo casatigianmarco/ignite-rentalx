@@ -2,7 +2,7 @@ import { CategoryOnMemoryRepository } from '../../repositories/CategoryOnMemoryR
 import { ListCategoriesController } from './ListCategoriesController';
 import { ListCategoriesUseCase } from './ListCategoriesUseCase';
 
-const categoryRepository = new CategoryOnMemoryRepository();
+const categoryRepository = CategoryOnMemoryRepository.getInstance();
 const listCategoriesUseCase = new ListCategoriesUseCase(categoryRepository);
 const listCategoriesController = new ListCategoriesController(
   listCategoriesUseCase,
