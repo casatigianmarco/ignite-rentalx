@@ -1,9 +1,13 @@
-import { Category } from '../models/Category';
-import { ICategoryRepository, ICreateCategoryDTO } from './ICategoryRepository';
+import { Category } from '../../models/Category';
+import {
+  ICategoryRepository,
+  ICreateCategoryDTO,
+} from '../ICategoryRepository';
 
 class CategoryOnMemoryRepository implements ICategoryRepository {
   private static INSTANCE: CategoryOnMemoryRepository;
   private categories: Category[];
+
   private constructor() {
     this.categories = [];
   }
