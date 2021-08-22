@@ -1,11 +1,10 @@
 import { Router } from 'express';
 
-import { CategoryOnMemoryRepository } from '../repositories/CategoryOnMemoryRepository';
-import { CategoryPostgresRepository } from '../repositories/CategoryPostgresRepository';
-import { CreateCategoryService } from '../services/CreateCategoryService';
+import { CategoryOnMemoryRepository } from '../modules/cars/repositories/CategoryOnMemoryRepository';
+import { CreateCategoryService } from '../modules/cars/services/CreateCategoryService';
 
 const categoryRoutes = Router();
-const categoryRepository = new CategoryPostgresRepository();
+const categoryRepository = new CategoryOnMemoryRepository();
 
 categoryRoutes.post('/', (request, response) => {
   const { name, description } = request.body;
