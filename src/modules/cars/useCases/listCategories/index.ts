@@ -1,4 +1,4 @@
-import { CategoryOnMemoryRepository } from '../../repositories/CategoryOnMemoryRepository';
+import { CategoryOnMemoryRepository } from '../../repositories/implementations/CategoryOnMemoryRepository';
 import { ListCategoriesController } from './ListCategoriesController';
 import { ListCategoriesUseCase } from './ListCategoriesUseCase';
 
