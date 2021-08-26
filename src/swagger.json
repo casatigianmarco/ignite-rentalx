@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "RentalX Doc",
+        "description": "This is an API Rent",
+        "version": "1.0.0",
+        "contact": {
+            "email": "jmbosad@rocketseat.com.br"
+        }
+    }
+}
